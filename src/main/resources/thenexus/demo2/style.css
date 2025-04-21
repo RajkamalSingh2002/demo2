@@ -1,0 +1,166 @@
+/* Root Styling */
+.root {
+    -fx-background-color: #1a1a2e;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 20px;
+}
+
+/* Title Section */
+.title {
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-fill: rgba(255,255,255,0.95);
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1px;
+    -fx-padding: 25px 40px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 5);
+    /* Increase bottom margin to add gap between title and menu */
+    -fx-margin: 30px 20px 20px 20px;
+}
+
+/* Menu Bar Container */
+.menu-bar {
+    -fx-background-color: rgba(26, 26, 46, 0.95);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1px;
+    -fx-padding: 10px 20px;
+    -fx-spacing: 50px;
+    /* Add top margin to further increase the gap below the title */
+    -fx-margin: 20px 20px 10px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* Menu Label Styling */
+.menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;  /* increased font size */
+    -fx-font-weight: 600;
+    -fx-padding: 10px 15px;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+    -fx-text-fill: white !important;
+}
+
+.menu:hover {
+    -fx-background-color: #00b4d8;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 0, 2);
+}
+/* Menu Item Styling */
+.menu-item {
+    -fx-background-color: rgba(26, 26, 46, 0.95);
+    -fx-text-fill: white;  /* ensure text is white */
+    -fx-font-size: 16px;  /* larger font size */
+    -fx-padding: 10px 15px;
+    -fx-min-width: 220px; /* a bit more width for clarity */
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+    -fx-text-fill: white !important;
+}
+.menu > .label,
+.menu-item > .label {
+    -fx-text-fill: white !important;
+    -fx-font-size: 18px !important;
+}
+
+/* Hover Effects for Menu Items */
+.menu-item:hover {
+    -fx-background-color: #00b4d8;
+    -fx-text-fill: white;
+}
+
+/* Focused Menu Item */
+.menu-item:focused {
+    -fx-background-color: #00b4d8;
+    -fx-text-fill: white;
+}
+
+/* Table View Styling */
+.table-view {
+    -fx-background-color: rgba(26, 26, 46, 0.9);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* Table Header Styling */
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-alignment: CENTER;
+}
+
+/* Table Row Styling */
+.table-view .table-row-cell {
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.05);
+}
+
+/* Selected Row Styling */
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(0, 180, 216, 0.3);
+}
+
+/* Responsive Design: Medium Screens */
+@media screen and (max-width: 768px) {
+    .title {
+        -fx-font-size: 28px;
+        -fx-padding: 20px 30px;
+    }
+    .menu-bar {
+        -fx-padding: 8px 15px;
+        -fx-spacing: 15px;
+    }
+    .menu {
+        -fx-font-size: 17px;
+        -fx-padding: 8px 10px;
+    }
+    .menu-item {
+        -fx-font-size: 15px;
+        -fx-padding: 8px 10px;
+    }
+    .table-view {
+        -fx-padding: 8px;
+    }
+}
+
+/* Responsive Design: Small Screens */
+@media screen and (max-width: 480px) {
+    .title {
+        -fx-font-size: 24px;
+        -fx-padding: 15px 20px;
+    }
+    .menu-bar {
+        -fx-padding: 5px 10px;
+        -fx-spacing: 10px;
+    }
+    .menu {
+        -fx-font-size: 16px;
+        -fx-padding: 5px 8px;
+    }
+    .menu-item {
+        -fx-font-size: 14px;
+        -fx-padding: 5px 8px;
+        -fx-min-width: 170px;
+    }
+    .table-view {
+        -fx-padding: 6px;
+    }
+}

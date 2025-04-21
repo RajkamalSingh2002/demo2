@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600" prefWidth="1200" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="thenexus.demo2.AdminDashboardController">
+
+    <!-- Title Section -->
+    <Label alignment="CENTER" styleClass="title" text="Vehicle Management System"
+           textAlignment="JUSTIFY" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"
+           AnchorPane.topAnchor="20" />
+
+    <!-- Complete Menu System -->
+    <MenuBar AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="130">
+        <Menu text="Customers">
+            <items>
+                <MenuItem text="Get Specific Customer" onAction="#handleGetSpecificCustomer"/>
+                <MenuItem text="Update Customer" onAction="#handleUpdateCustomer"/>
+                <MenuItem text="All Customers" onAction="#handleAllCustomers"/>
+                <MenuItem text="Delete Customer" onAction="#handleDeleteCustomer"/>
+                <MenuItem text="Add New Customer" onAction="#handleAddCustomer"/>
+            </items>
+        </Menu>
+
+        <Menu text="Vehicles">
+            <items>
+                <MenuItem text="Get Specific Vehicle" onAction="#handleGetSpecificVehicle"/>
+                <MenuItem text="Update Vehicle" onAction="#handleUpdateVehicle"/>
+                <MenuItem text="All Vehicles" onAction="#handleAllVehicles"/>
+                <MenuItem text="Delete Vehicle" onAction="#handleDeleteVehicle"/>
+                <MenuItem text="Add New Vehicle" onAction="#handleAddVehicle"/>
+            </items>
+        </Menu>
+
+        <Menu text="Appointments">
+            <items>
+                <MenuItem text="Get Appointment" onAction="#handleGetSpecificAppointment"/>
+                <MenuItem text="Update Appointment" onAction="#handleUpdateAppointment"/>
+                <MenuItem text="All Appointments" onAction="#handleAllAppointments"/>
+                <MenuItem text="Delete Appointment" onAction="#handleDeleteAppointment"/>
+                <MenuItem text="Add New Appointment" onAction="#handleAddAppointment"/>
+            </items>
+        </Menu>
+
+        <Menu text="Appointment Services">
+            <items>
+                <MenuItem text="Get Appointment Service" onAction="#handleGetSpecificAppointmentService"/>
+                <MenuItem text="Update Appointment Service" onAction="#handleUpdateAppointmentService"/>
+                <MenuItem text="All Appointment Services" onAction="#handleAllAppointmentServices"/>
+                <MenuItem text="Delete Appointment Service" onAction="#handleDeleteAppointmentService"/>
+                <MenuItem text="Add New Appointment Service" onAction="#handleAddAppointmentService"/>
+            </items>
+        </Menu>
+
+        <Menu text="Services">
+            <items>
+                <MenuItem text="Get Service" onAction="#handleGetSpecificService"/>
+                <MenuItem text="Update Service" onAction="#handleUpdateService"/>
+                <MenuItem text="All Services" onAction="#handleAllServices"/>
+                <MenuItem text="Delete Service" onAction="#handleDeleteService"/>
+                <MenuItem text="Add New Service" onAction="#handleAddService"/>
+            </items>
+        </Menu>
+
+        <Menu text="Inventory">
+            <items>
+                <MenuItem text="Get Item" onAction="#handleGetSpecificInventory"/>
+                <MenuItem text="Update Item" onAction="#handleUpdateInventory"/>
+                <MenuItem text="All Items" onAction="#handleAllInventory"/>
+                <MenuItem text="Delete Item" onAction="#handleDeleteInventory"/>
+                <MenuItem text="Add New Item" onAction="#handleAddInventory"/>
+            </items>
+        </Menu>
+        <Menu text="Invoices">
+            <items>
+                <MenuItem text="Get Invoice" onAction="#handleGetSpecificInvoice"/>
+                <MenuItem text="Update Invoice" onAction="#handleUpdateInvoice"/>
+                <MenuItem text="All Invoices" onAction="#handleAllInvoices"/>
+                <MenuItem text="Delete Invoice" onAction="#handleDeleteInvoice"/>
+                <MenuItem text="Add New Invoice" onAction="#handleAddInvoice"/>
+                <MenuItem text="Generate Invoice PDF" onAction="#handleGeneratePDFInvoice"/>
+                <MenuItem text="Generate Revenue Report" onAction="#handleGenerateRevenueReport"/>
+            </items>
+        </Menu>
+        <Menu text="Employees">
+            <items>
+                <MenuItem text="Get Employee" onAction="#handleGetSpecificUser"/>
+                <MenuItem text="Update Employee" onAction="#handleUpdateUser"/>
+                <MenuItem text="All Employees" onAction="#handleAllUsers"/>
+                <MenuItem text="Add New Employee" onAction="#handleAddUser"/>
+            </items>
+        </Menu>
+        <Menu text="Notifications">
+            <items>
+                <MenuItem text="Get All Low Stock Notifications" onAction="#handleAllLowStockNotifications"/>
+            </items>
+        </Menu>
+        <Menu text="LogOut">
+            <items>
+            <MenuItem fx:id="logOut" text="Log Out" onAction="#handleLogOut"/>
+            </items>
+        </Menu>
+
+
+    </MenuBar>
+
+    <!-- Complete Table Section -->
+    <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20"
+               AnchorPane.rightAnchor="20" AnchorPane.topAnchor="190">
+        <columns>
+            <!-- Default columns for Customer view; these will be reset dynamically -->
+            <TableColumn fx:id="customerIdCol" text="Customer ID" prefWidth="100" />
+            <TableColumn fx:id="nameCol" text="Name" prefWidth="150" />
+            <TableColumn fx:id="emailCol" text="Email" prefWidth="200" />
+            <TableColumn fx:id="contactCol" text="Contact" prefWidth="150" />
+            <TableColumn fx:id="addressCol" text="Address" prefWidth="200" />
+        </columns>
+    </TableView>
+
+</AnchorPane>
